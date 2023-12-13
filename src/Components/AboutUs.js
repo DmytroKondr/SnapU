@@ -3,7 +3,7 @@ import img1 from '../images/AboutUsImg1.jfif'
 import img2 from '../images/AboutUsImg2.jfif'
 
 
-function AboutUs() {
+function AboutUs(props) {
 
 
     return <div id="about-us">
@@ -32,7 +32,7 @@ function AboutUs() {
 
         <div>
             <h2>Join us now by purchasing suitable plan</h2>
-            <input type="button" value='Products' />
+            <input type="button" value='Products' onClick={() => props.changePage(1)} />
         </div>
 
     </div>

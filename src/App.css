@@ -42,6 +42,59 @@ header #menu {
   align-items: center;
   justify-content: space-between;
 }
+header #menu #pages #settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+header #menu #pages #settings img {
+  width: 13px;
+  height: 13px;
+  transform: rotate(90deg);
+  filter: grayscale(1);
+  margin: 5px 0 0 5px;
+  transition: all 0.5s ease;
+}
+header #menu #pages #settings img.flip {
+  transform: rotate(270deg);
+}
+header #menu .drop-down-menu {
+  position: absolute;
+  top: 60px;
+  left: 485px;
+  width: 200px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+header #menu .drop-down-menu.hidden {
+  height: 0;
+  padding: 0;
+}
+header #menu .drop-down-menu.hidden * {
+  display: none;
+}
+header #menu .drop-down-menu select {
+  width: 70px;
+  height: 30px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+}
+header #menu .drop-down-menu select:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+header #menu .drop-down-menu select:focus {
+  border: none;
+  outline: none;
+}
 header span {
   color: gray;
   font-size: 1.25rem;
@@ -83,11 +136,12 @@ header #menu-account input:hover {
   color: white;
   font-weight: bold;
 }
-header #menuIco, header #go-back {
+header #menuIco,
+header #go-back {
   display: none;
 }
 
-content {
+main {
   margin-top: 20px;
   width: 100%;
   height: -moz-fit-content;
@@ -97,61 +151,61 @@ content {
   box-sizing: border-box;
   transition: transform 1s, opacity 0.5s;
 }
-content :first-child {
+main :first-child {
   width: 70%;
   align-self: center;
 }
-content #about-us h1 {
+main #about-us h1 {
   width: 100%;
   text-align: center;
   font-size: 3rem;
 }
-content #about-us > div {
+main #about-us > div {
   margin: 200px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-content #about-us > div .about-text {
+main #about-us > div .about-text {
   padding: 10px 100px 0 0;
   font-size: 1.5rem;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-around;
 }
-content #about-us > div .about-text h2 {
+main #about-us > div .about-text h2 {
   text-indent: 30px;
   margin: 0 0 20px 30px;
   width: 70%;
 }
-content #about-us > div .about-text p {
+main #about-us > div .about-text p {
   text-indent: 10px;
 }
-content #about-us > div .about-image {
+main #about-us > div .about-image {
   width: 400px;
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-content #about-us > div .about-image img {
+main #about-us > div .about-image img {
   width: 400px;
   height: 400px;
   border-radius: 10px;
   transition: all 0.2s;
 }
-content #about-us > div .about-image img:hover {
+main #about-us > div .about-image img:hover {
   transform: scale(0.98);
 }
-content #about-us > div:last-child {
+main #about-us > div:last-child {
   margin-top: 0;
   float: left;
   flex-direction: column;
 }
-content #about-us > div:last-child h2 {
+main #about-us > div:last-child h2 {
   width: 100%;
 }
-content #about-us > div:last-child input {
+main #about-us > div:last-child input {
   align-self: flex-start;
   margin: 40px 20px 0 0;
   width: 300px;
@@ -165,30 +219,30 @@ content #about-us > div:last-child input {
   color: white;
   transition: all 0.5s;
 }
-content #about-us > div:last-child input:hover {
+main #about-us > div:last-child input:hover {
   cursor: pointer;
   background-color: transparent;
   color: black;
 }
-content #products .product {
+main #products .product {
   width: 100%;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 200px;
 }
-content #products .product h2 {
+main #products .product h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 50px;
 }
-content #products .product > div {
+main #products .product > div {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-content #products .product > div > div {
+main #products .product > div > div {
   width: 30%;
   height: 500px;
   border-radius: 20px;
@@ -198,7 +252,7 @@ content #products .product > div > div {
   justify-content: space-between;
   transition: transform 0.5s;
 }
-content #products .product > div > div h2 {
+main #products .product > div > div h2 {
   width: 100%;
   background-color: black;
   color: white;
@@ -209,16 +263,16 @@ content #products .product > div > div h2 {
   box-sizing: border-box;
   margin-bottom: 20px;
 }
-content #products .product > div > div ul {
+main #products .product > div > div ul {
   flex-grow: 1;
   font-size: 1.25rem;
   width: 80%;
   align-self: center;
 }
-content #products .product > div > div ul li {
+main #products .product > div > div ul li {
   margin: 10px 0;
 }
-content #products .product > div > div button {
+main #products .product > div > div button {
   align-self: center;
   margin-bottom: 30px;
   width: 200px;
@@ -229,40 +283,41 @@ content #products .product > div > div button {
   font-weight: bold;
   border: 2px solid black;
   background-color: black;
-  color: white;
+  color: rgb(241, 241, 241);
   transition: all 0.5s;
   font-size: 1rem;
   font-weight: normal;
 }
-content #products .product > div > div button span {
+main #products .product > div > div button span {
   margin: 0 2px;
   font-size: 1.2rem;
   font-weight: bold;
+  color: white;
 }
-content #products .product > div > div button:hover {
+main #products .product > div > div button:hover {
   cursor: pointer;
   background-color: transparent;
   color: black;
 }
-content #products .product > div > div:hover {
+main #products .product > div > div:hover {
   transform: scale(1.05);
 }
-content #review {
+main #review {
   font-size: 1.5rem;
 }
-content #review h1 {
+main #review h1 {
   text-indent: 20px;
   margin-bottom: 20px;
   font-size: 3rem;
 }
-content #review #ins {
+main #review #ins {
   display: inline-flex;
   margin-bottom: 20px;
 }
-content #review #ins :first-child {
+main #review #ins :first-child {
   margin-right: 20px;
 }
-content #review #ins label input {
+main #review #ins label input {
   font-size: 1.1rem;
   background-color: white;
   border: 1px solid gray;
@@ -272,44 +327,44 @@ content #review #ins label input {
   padding: 5px;
   margin-top: 5px;
 }
-content #review #ins label input[type=email] {
+main #review #ins label input[type=email] {
   width: 300px;
 }
-content #review #ins label span {
+main #review #ins label span {
   margin-left: 20px;
   font-size: 0.75rem;
 }
-content #review #ins label.error span {
+main #review #ins label.error span {
   color: red;
 }
-content #review #ins label.error input {
+main #review #ins label.error input {
   border: 1px solid red;
   color: rgb(255, 92, 92);
 }
-content #review #stars img {
+main #review #stars img {
   height: 40px;
   width: 40px;
   margin-right: 5px;
   filter: grayscale(100%);
   margin-bottom: 10px;
 }
-content #review #stars img.notGray {
+main #review #stars img.notGray {
   filter: grayscale(0);
 }
-content #review #stars img.halfGray {
+main #review #stars img.halfGray {
   filter: grayscale(50%);
 }
-content #review #stars img:hover {
+main #review #stars img:hover {
   cursor: pointer;
 }
-content #review textarea {
+main #review textarea {
   border-radius: 5px;
   padding: 5px;
   font-size: 1.1rem;
   margin-top: 5px;
   resize: none;
 }
-content #review input[type=submit] {
+main #review input[type=submit] {
   width: 200px;
   height: 60px;
   padding: 10px 20px;
@@ -322,7 +377,7 @@ content #review input[type=submit] {
   margin: 20px 0;
   transition: all 0.5s;
 }
-content #review input[type=submit]:hover {
+main #review input[type=submit]:hover {
   cursor: pointer;
   background-color: transparent;
   color: black;
@@ -363,39 +418,39 @@ footer p {
   opacity: 0;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 850px) {
   html {
     font-size: 12px;
   }
-  content :first-child {
+  main :first-child {
     width: 90%;
   }
-  content :first-child > div {
+  main :first-child > div {
     margin: 50px 0 !important;
   }
-  content #about-us .about-text h2 {
+  main #about-us .about-text h2 {
     text-indent: 10px !important;
     margin: 0 0 10px 0 !important;
     width: 100% !important;
   }
-  content #about-us > div .about-image img {
+  main #about-us > div .about-image img {
     width: 200px;
     height: 200px;
   }
-  content #products .product > div > div {
+  main #products .product > div > div {
     height: 400px;
   }
-  content #products .product > div > div ul li {
+  main #products .product > div > div ul li {
     margin: 10px 0 0 10px;
   }
-  content #products .product > div > div button {
+  main #products .product > div > div button {
     width: 150px;
     height: 50px;
   }
-  content #review #ins {
+  main #review #ins {
     margin: 10px 0 !important;
   }
-  content #review #stars {
+  main #review #stars {
     margin: 10px 0 !important;
   }
 }
@@ -434,6 +489,11 @@ footer p {
     display: inline-flex;
     flex-direction: column;
   }
+  header #menu #pages .drop-down-menu {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
   header #menu #pages span {
     text-align: center;
     margin: 20px 0;
@@ -452,16 +512,16 @@ footer p {
     height: 25px;
     width: 25px;
   }
-  content :first-child {
+  main :first-child {
     width: 98%;
   }
-  content :first-child > div {
+  main :first-child > div {
     margin: 50px 0 !important;
   }
-  content #about-us h1 {
+  main #about-us h1 {
     width: 100%;
   }
-  content #about-us > div {
+  main #about-us > div {
     width: -moz-fit-content;
     width: fit-content;
     height: -moz-fit-content;
@@ -471,53 +531,53 @@ footer p {
     text-align: center;
     width: 98%;
   }
-  content #about-us > div .about-text {
+  main #about-us > div .about-text {
     margin: 0;
     padding: 0;
   }
-  content #about-us > div .about-image img {
+  main #about-us > div .about-image img {
     width: 80vw;
     height: auto;
   }
-  content #about-us > div:last-child {
+  main #about-us > div:last-child {
     float: none;
     margin: 0 auto !important;
   }
-  content #about-us > div:last-child input {
+  main #about-us > div:last-child input {
     align-self: center;
     margin: 20px 0;
   }
-  content #products .product {
+  main #products .product {
     margin: 30px 0;
   }
-  content #products .product:first-child {
+  main #products .product:first-child {
     margin: 30px 0 !important;
   }
-  content #products .product > div > div {
+  main #products .product > div > div {
     height: 350px;
   }
-  content #products .product > div > div ul li {
+  main #products .product > div > div ul li {
     margin: 10px 0 0 10px;
   }
-  content #products .product > div > div button {
+  main #products .product > div > div button {
     width: 100px;
     height: 40px;
   }
-  content #products .product > div > div button span {
+  main #products .product > div > div button span {
     font-weight: 0.5rem;
   }
-  content #review form h1 {
+  main #review form h1 {
     text-align: center;
   }
-  content #review #ins {
+  main #review #ins {
     display: inline-flex;
     flex-direction: column;
     align-items: start;
   }
-  content #review #ins > label {
+  main #review #ins > label {
     margin: 10px 0 0 0px;
   }
-  content #review #ins > label:first-child {
+  main #review #ins > label:first-child {
     margin-right: 0;
   }
 }/*# sourceMappingURL=App.css.map */

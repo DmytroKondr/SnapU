@@ -10,14 +10,14 @@ import Review from "./Review";
 function Content(props) {
 
     let result
-    if (props.page === 0) result = <AboutUs />
-    else if (props.page === 1) result = <Products />
+    if (props.page === 0) result = <AboutUs changePage={props.changePage} />
+    else if (props.page === 1) result = <Products getCurrency={props.getCurrency} />
     else result = <Review />
 
 
-    return <content>
+    return <main>
         {result}
-    </content>
+    </main>
 }
 
 export default Content

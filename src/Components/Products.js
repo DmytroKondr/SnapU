@@ -1,7 +1,24 @@
 import React from "react";
+import { nanoid } from "nanoid"
 
 
-function Products() {
+function Products(props) {
+    console.log(props.getCurrency().usdTo.EUR);
+
+    let curMark = ''
+    let scale = 0
+    if(props.getCurrency().curentCurrency === 'UAH') {
+        curMark = 'грн'
+        scale = props.getCurrency().usdTo.UAH
+    }
+    else if(props.getCurrency().curentCurrency === 'EUR') {
+        curMark = 'Є'
+        scale = props.getCurrency().usdTo.EUR
+    }
+    else if(props.getCurrency().curentCurrency === 'USD') {
+        curMark = '$'
+        scale = 1
+    }
 
     // Creating imaginary products
     const product1 = {
@@ -46,14 +63,15 @@ function Products() {
 
         let prodBody = product.levels.map(lvl => {
             let advantages = lvl.advantages.map(adv => {
-
-                return <li>{adv}</li>
+                let key = nanoid()
+                return <li id={key}>{adv}</li>
             })
+            let cost = (Number(lvl.cost) * Number(scale)).toFixed(2)
 
             return <div>
                 <h2>{lvl.levelName}</h2>
                 <ul>{advantages}</ul>
-                <button className="purchase">$<span>{lvl.cost}</span>/per month</button>
+                <button className="purchase">{curMark}<span>{cost}</span>/per month</button>
             </div>
         })
 
