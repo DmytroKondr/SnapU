@@ -25,6 +25,108 @@ body.bg::before {
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: transparent;
+  transition: all 1s;
+}
+#root.dark-theme {
+  background-color: rgb(23, 23, 23);
+}
+#root.dark-theme header {
+  background-color: rgb(45, 45, 45);
+  border-bottom: 1px solid #f4f4f4;
+}
+#root.dark-theme header #logo {
+  color: #f4f4f4;
+}
+#root.dark-theme header span {
+  color: #ececec;
+}
+#root.dark-theme header #menu-account input {
+  background-color: transparent;
+  color: #f4f4f4;
+}
+#root.dark-theme header #menu-account input#register {
+  box-sizing: border-box;
+  border: 2px solid #f4f4f4;
+}
+#root.dark-theme header #menu-account input:hover {
+  cursor: pointer;
+  border: none;
+  background-color: #f4f4f4;
+  color: #373737;
+  font-weight: bold;
+}
+#root.dark-theme header #menu #pages #settings img {
+  filter: invert(100%);
+}
+#root.dark-theme header .drop-down-menu {
+  background-color: #373737;
+  color: #f4f4f4;
+}
+#root.dark-theme header .drop-down-menu:hover {
+  box-shadow: 0 0 5px white;
+}
+#root.dark-theme header .drop-down-menu select {
+  background-color: #535353;
+  color: #f4f4f4;
+}
+#root.dark-theme header .drop-down-menu select:hover {
+  box-shadow: 0 0 5px white;
+}
+#root.dark-theme header .drop-down-menu select option {
+  background-color: #535353;
+  color: #f4f4f4;
+}
+#root.dark-theme header .drop-down-menu #change-theme {
+  background-color: #f4f4f4;
+}
+#root.dark-theme header .drop-down-menu #change-theme .circle {
+  background-color: #373737;
+  transform: translate(100%);
+}
+#root.dark-theme header .drop-down-menu #change-theme:hover {
+  cursor: pointer;
+}
+#root.dark-theme main {
+  background-color: rgb(23, 23, 23);
+  color: #f4f4f4;
+}
+#root.dark-theme main #about-us > div:last-child input, #root.dark-theme main #review input[type=submit] {
+  border: 2px solid #f4f4f4;
+  background-color: #f4f4f4;
+  color: rgb(23, 23, 23);
+}
+#root.dark-theme main #about-us > div:last-child input:hover, #root.dark-theme main #review input[type=submit]:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #f4f4f4;
+}
+#root.dark-theme main #products .product > div > div {
+  border-color: #f4f4f4;
+}
+#root.dark-theme main #products .product > div > div h2 {
+  background-color: #f4f4f4;
+  color: #373737;
+}
+#root.dark-theme main #products .product > div > div button {
+  border: 2px solid #f4f4f4;
+  background-color: #f4f4f4;
+  color: rgb(23, 23, 23);
+}
+#root.dark-theme main #products .product > div > div button span {
+  margin: 0 2px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(23, 23, 23);
+  transition: all 0.5s;
+}
+#root.dark-theme main #products .product > div > div button:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #f4f4f4;
+}
+#root.dark-theme main #products .product > div > div button:hover span {
+  color: #f4f4f4;
 }
 
 header {
@@ -33,6 +135,7 @@ header {
   padding: 10px 20px;
   box-sizing: border-box;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: background-color 1s, color 0.5s;
   display: inline-flex;
   justify-content: space-between;
 }
@@ -70,6 +173,10 @@ header #menu .drop-down-menu {
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "top-left top-right" "bottom bottom";
+  align-items: center;
+  justify-content: space-between;
   transition: all 0.3s;
 }
 header #menu .drop-down-menu.hidden {
@@ -80,6 +187,7 @@ header #menu .drop-down-menu.hidden * {
   display: none;
 }
 header #menu .drop-down-menu select {
+  grid-area: top-left;
   width: 70px;
   height: 30px;
   font-size: 1rem;
@@ -95,8 +203,55 @@ header #menu .drop-down-menu select:focus {
   border: none;
   outline: none;
 }
+header #menu .drop-down-menu #change-theme {
+  grid-area: top-right;
+  width: 70px;
+  height: 40px;
+  background-color: black;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 6px;
+  position: relative;
+  transition: all 0.5s;
+}
+header #menu .drop-down-menu #change-theme .circle {
+  background-color: white;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  transition: transform 0.5s;
+}
+header #menu .drop-down-menu #change-theme:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px #373737;
+}
+header #menu .drop-down-menu #change-lang {
+  margin: 20px auto 0;
+  grid-area: bottom;
+  display: flex;
+  width: 150px;
+  height: 40px;
+}
+header #menu .drop-down-menu #change-lang button {
+  font-size: 1.25rem;
+  height: 100%;
+  width: 50%;
+  border-radius: 0 10px 10px 0;
+  border: none;
+}
+header #menu .drop-down-menu #change-lang button:first-child {
+  border-radius: 10px 0 0 10px;
+  border-right: 1px solid gray;
+}
+header #menu .drop-down-menu #change-lang button:hover {
+  cursor: pointer;
+  background-color: rgb(226, 226, 226);
+}
+header #menu .drop-down-menu #change-lang button:active {
+  background-color: rgb(206, 206, 206);
+}
 header span {
-  color: gray;
+  color: rgb(47, 47, 47);
   font-size: 1.25rem;
   margin: 0 10px;
   transition: all 0.5s;
@@ -142,14 +297,14 @@ header #go-back {
 }
 
 main {
-  margin-top: 20px;
+  padding-top: 20px;
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   display: inline-flex;
   flex-direction: column;
   box-sizing: border-box;
-  transition: transform 1s, opacity 0.5s;
+  transition: transform 1s, opacity 0.5s, background-color 1s, color 0.5s;
 }
 main :first-child {
   width: 70%;
@@ -314,7 +469,7 @@ main #review #ins {
   display: inline-flex;
   margin-bottom: 20px;
 }
-main #review #ins :first-child {
+main #review #ins > :first-child {
   margin-right: 20px;
 }
 main #review #ins label input {
@@ -330,7 +485,10 @@ main #review #ins label input {
 main #review #ins label input[type=email] {
   width: 300px;
 }
-main #review #ins label span {
+main #review #ins label p {
+  width: 100%;
+}
+main #review #ins label p span {
   margin-left: 20px;
   font-size: 0.75rem;
 }
@@ -458,6 +616,15 @@ footer p {
   html {
     font-size: 10px;
   }
+  #root.dark-theme header #menuIco {
+    filter: invert(100%);
+  }
+  #root.dark-theme header #menu {
+    background-color: rgb(45, 45, 45);
+  }
+  #root.dark-theme header #menu #go-back {
+    filter: invert(100%);
+  }
   header #menu {
     position: absolute;
     top: 0;
@@ -474,7 +641,7 @@ footer p {
     align-items: center;
     z-index: 100;
     transform: translate(100%);
-    transition: transform 0.5s;
+    transition: transform 0.5s, background-color 1s;
   }
   header #menu.hidden {
     transform: translate(0);

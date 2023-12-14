@@ -32,6 +32,128 @@ body {
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: transparent;
+    transition: all 1s;
+
+    // Dark theme
+    &.dark-theme{
+        background-color: rgb(23, 23, 23);
+        
+        header{
+            background-color: rgb(45, 45, 45);
+            border-bottom: 1px solid #f4f4f4;
+            #logo{
+                color: #f4f4f4;
+            }
+            span{
+                color: #ececec;
+            }
+
+            #menu-account {
+                input {
+                    background-color: transparent;
+                    color: #f4f4f4;
+        
+                    &#register {
+                        box-sizing: border-box;
+                        border: 2px solid #f4f4f4;
+                        
+                    }
+        
+                    &:hover {
+                        cursor: pointer;
+                        border: none;
+                        background-color: #f4f4f4;
+                        color: #373737;
+                        font-weight: bold;
+                    }
+                }
+            }
+            #menu #pages #settings img{
+                filter: invert(100%);
+            }
+
+            .drop-down-menu {
+                background-color: #373737;
+                color: #f4f4f4;
+                
+                &:hover{
+                    box-shadow: 0 0 5px white;
+                }
+                select{
+                    background-color: #535353;
+                    color: #f4f4f4;
+                    &:hover{
+                        box-shadow: 0 0 5px white;
+                    }
+                    option{
+                        background-color: #535353;
+                        color: #f4f4f4;
+                    }
+                }
+                #change-theme{
+                    background-color: #f4f4f4;
+    
+                    .circle{
+                        background-color: #373737;
+                        transform: translate(100%);
+                    }
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+        main{
+            background-color: rgb(23, 23, 23);
+            color: #f4f4f4;
+
+            #about-us > div:last-child input, #review input[type=submit] {
+                border: 2px solid #f4f4f4;
+                background-color: #f4f4f4;
+                color: rgb(23, 23, 23);
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: #f4f4f4;
+                }
+            }
+
+            #products{
+                .product > div > div{
+                    border-color: #f4f4f4;
+                    h2{
+                        background-color: #f4f4f4;
+                        color: #373737;
+                    }
+                    button{
+                        border: 2px solid #f4f4f4;
+                        background-color: #f4f4f4;
+                        color: rgb(23, 23, 23);
+                        span {
+                            margin: 0 2px;
+                            font-size: 1.2rem;
+                            font-weight: bold;
+                            color: rgb(23, 23, 23);
+                            transition: all 0.5s;
+                        }
+    
+                        &:hover {
+                            cursor: pointer;
+                            background-color: transparent;
+                            color: #f4f4f4;
+                            span{
+                                color: #f4f4f4;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -41,6 +163,7 @@ header {
     padding: 10px 20px;
     box-sizing: border-box;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    transition: background-color 1s, color 0.5s;
 
     display: inline-flex;
     justify-content: space-between;
@@ -84,6 +207,13 @@ header {
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             box-sizing: border-box;
 
+            display: grid;
+            grid-template-areas: 
+                "top-left top-right"
+                "bottom bottom";
+            align-items: center;
+            justify-content: space-between;
+
             transition: all 0.3s;
             &.hidden {
                 *{
@@ -94,6 +224,7 @@ header {
             }
 
             select {
+                grid-area: top-left;
                 width: 70px;
                 height: 30px;
                 font-size: 1rem;
@@ -111,11 +242,64 @@ header {
                     outline: none;
                 }
             }
+
+            #change-theme{
+                grid-area: top-right;
+
+                width: 70px;
+                height: 40px;
+                background-color: black;
+                border-radius: 30px;
+                box-sizing: border-box;
+                padding: 6px;
+
+                position: relative;
+                transition: all 0.5s;
+
+                .circle{
+                    background-color: white;
+                    height: 28px;
+                    width: 28px;
+                    border-radius: 50%;
+                    transition: transform 0.5s;
+                }
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: 0 0 5px #373737;
+                }
+            }
+
+            #change-lang{
+                margin: 20px auto 0;
+                grid-area: bottom;
+                display: flex;
+                width: 150px;
+                height: 40px;
+                
+                button{
+                    font-size: 1.25rem;
+                    height: 100%;
+                    width: 50%;
+                    border-radius: 0 10px 10px 0;
+                    border: none;
+                    &:first-child{
+                        border-radius: 10px 0 0 10px;
+                        border-right: 1px solid gray;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        background-color: rgb(226, 226, 226);
+                    }
+                    &:active{
+                        background-color: rgb(206, 206, 206);                     
+                    }
+                }
+            }
         }
     }
 
     span {
-        color: gray;
+        color: rgb(47, 47, 47);
         font-size: 1.25rem;
         margin: 0 10px;
         transition: all 0.5s;
@@ -172,15 +356,17 @@ header {
     }
 }
 
+
+
 main {
-    margin-top: 20px;
+    padding-top: 20px;
     width: 100%;
     height: fit-content;
     display: inline-flex;
     flex-direction: column;
     box-sizing: border-box;
 
-    transition: transform 1s, opacity 0.5s;
+    transition: transform 1s, opacity 0.5s, background-color 1s, color 0.5s;
 
     :first-child {
         width: 70%;
@@ -189,7 +375,7 @@ main {
 
 
     #about-us {
-
+        
         h1 {
             width: 100%;
             text-align: center;
@@ -279,8 +465,6 @@ main {
 
 
     #products {
-        // width: 70%;
-        // align-self: center;
 
         .product {
             width: 100%;
@@ -393,7 +577,7 @@ main {
             display: inline-flex;
             margin-bottom: 20px;
 
-            :first-child {
+            >:first-child {
                 margin-right: 20px;
             }
 
@@ -413,9 +597,12 @@ main {
                     }
                 }
 
-                span {
-                    margin-left: 20px;
-                    font-size: 0.75rem;
+                p{
+                    width: 100%;
+                    span {
+                        margin-left: 20px;
+                        font-size: 0.75rem;
+                    }
                 }
 
                 &.error {
@@ -609,6 +796,18 @@ footer {
         font-size: 10px;
     }
 
+    #root.dark-theme header{
+        #menuIco{
+            filter: invert(100%);
+        }
+        #menu{
+            background-color: rgb(45, 45, 45);
+            #go-back{
+                filter: invert(100%);
+            }
+        }
+    }
+
     header {
         #menu {
             position: absolute;
@@ -629,7 +828,7 @@ footer {
             z-index: 100;
 
             transform: translate(100%);
-            transition: transform 0.5s;
+            transition: transform 0.5s, background-color 1s;
 
             &.hidden {
                 transform: translate(0);

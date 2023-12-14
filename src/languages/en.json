@@ -1,0 +1,32 @@
+{
+    "header": {
+        "about": "About us",
+        "products": "Products",
+        "review": "Leave review",
+        "settings": "Settings",
+        "login": "Login",
+        "register": "Register"
+      },
+    "main": {
+        "intro": "We are SnapU",
+        "1stintro": "What is SnapU?",
+        "1st": "SnapU is a young company that offers online services dedicated to transforming people's fitness journeys. We provide tailored workout schedules, nutrition plans, insightful advice, and more to help individuals achieve their fitness goals efficiently and effectively",
+        "2ndintro": "Transform Your Fitness Journey with SnapU",
+        "2nd": "People should choose SnapU for our commitment to personalized fitness solutions. We understand that each individual's fitness journey is unique, and our comprehensive approach combines tailored workout routines, customized meal plans, and expert guidance. Our dedication to delivering results-driven strategies sets us apart, ensuring that our clients receive the support and tools they need to succeed on their path to a healthier lifestyle.",
+        "3dintro": "Join us now by purchasing suitable plan",
+        "buttonText": "Products"
+    },
+    "products": {
+        "1stName": "Membership access",
+        "2ndName": "Gym access",
+        "perMonth": "/per month"
+    },
+    "rewiew": {
+        "intro": "Leave us your review",
+        "Name": "Name",
+        "errName": "Tell us your name",
+        "errMail": "Invalid E-mail",
+        "details": "What do you think?",
+        "send": "Send"
+    }
+}

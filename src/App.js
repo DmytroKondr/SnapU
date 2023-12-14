@@ -1,9 +1,25 @@
 import './App.css';
-import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
+import React, { useState, createContext } from 'react';
 import Header from './Components/Header';
 import Content from './Components/Content';
 import Footer from './Components/Footer';
+import i18next from 'i18next';
 
+// i18next.init({
+//   lng: 'en',
+//   resources: {
+//     en: {
+//       translation: {
+//         "key": "hello world"
+//       }
+//     },
+//     ukr: {
+//       translation: {
+//         "key": "Привіт світ"
+//       }
+//     }
+//   }
+// });
 
 
 
@@ -65,12 +81,13 @@ function App() {
     return { usdTo: usdTo, curentCurrency: curentCurrency }
   }
   //
-
-
+  //
+  
+  const [lan, setLang] = useState('en')
 
   return <>
-    <Header chandgeCurrency={chandgeCurrency} changePage={changePage} />
-    <Content getCurrency={getCurrency} changePage={changePage} page={page} />
+    <Header lan={lan} setLang={setLang} chandgeCurrency={chandgeCurrency} changePage={changePage} />
+    <Content lan={lan} getCurrency={getCurrency} changePage={changePage} page={page} />
     <Footer />
   </>
 }

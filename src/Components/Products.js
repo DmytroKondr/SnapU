@@ -1,6 +1,22 @@
 import React from "react";
 import { nanoid } from "nanoid"
 
+import i18next from "i18next";
+import en from "../languages/en.json"
+import ukr from "../languages/ukr.json"
+
+i18next.init({
+    resources:{
+        en: {
+            translation: en
+        },
+        ukr: {
+            translation: ukr
+        }
+    }
+})
+
+
 
 function Products(props) {
     console.log(props.getCurrency().usdTo.EUR);
@@ -22,7 +38,7 @@ function Products(props) {
 
     // Creating imaginary products
     const product1 = {
-        name: 'Membership access',
+        name: i18next.t('products.1stName', {lng: props.lan}),
         levels: [
             {
                 levelName: 'Standart',
@@ -42,7 +58,7 @@ function Products(props) {
         ]
     }
     const product2 = {
-        name: 'Membership access',
+        name: i18next.t('products.2ndName', {lng: props.lan}),
         levels: [
             {
                 levelName: 'Standart',
@@ -64,14 +80,14 @@ function Products(props) {
         let prodBody = product.levels.map(lvl => {
             let advantages = lvl.advantages.map(adv => {
                 let key = nanoid()
-                return <li id={key}>{adv}</li>
+                return <li key={key}>{adv}</li>
             })
             let cost = (Number(lvl.cost) * Number(scale)).toFixed(2)
 
             return <div>
                 <h2>{lvl.levelName}</h2>
                 <ul>{advantages}</ul>
-                <button className="purchase">{curMark}<span>{cost}</span>/per month</button>
+                <button className="purchase">{curMark}<span>{cost}</span>{i18next.t('products.perMonth', {lng: props.lan})}</button>
             </div>
         })
 
