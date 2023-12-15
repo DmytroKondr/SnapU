@@ -43,6 +43,9 @@ body {
             background-color: rgb(45, 45, 45);
             border-bottom: 1px solid #f4f4f4;
             #logo{
+                img{
+                    filter: invert(100%);
+                }
                 color: #f4f4f4;
             }
             span{
@@ -305,6 +308,13 @@ header {
         transition: all 0.5s;
 
         &#logo {
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 10px;
+                height: 80%;
+                width: auto;
+            }
             color: black;
             font-size: 2rem;
             font-weight: bold;
@@ -542,12 +552,16 @@ main {
                             font-size: 1.2rem;
                             font-weight: bold;
                             color: white;
+                            transition: color 0.5s;
                         }
 
                         &:hover {
                             cursor: pointer;
                             background-color: transparent;
                             color: black;
+                            span{
+                                color: black;
+                            }
                         }
                     }
 

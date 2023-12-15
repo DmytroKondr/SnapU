@@ -38,6 +38,9 @@ body.bg::before {
 #root.dark-theme header #logo {
   color: #f4f4f4;
 }
+#root.dark-theme header #logo img {
+  filter: invert(100%);
+}
 #root.dark-theme header span {
   color: #ececec;
 }
@@ -257,10 +260,17 @@ header span {
   transition: all 0.5s;
 }
 header span#logo {
+  display: flex;
+  align-items: center;
   color: black;
   font-size: 2rem;
   font-weight: bold;
   margin-right: 20px;
+}
+header span#logo img {
+  margin-right: 10px;
+  height: 80%;
+  width: auto;
 }
 header span#logo:hover {
   cursor: default;
@@ -448,10 +458,14 @@ main #products .product > div > div button span {
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
+  transition: color 0.5s;
 }
 main #products .product > div > div button:hover {
   cursor: pointer;
   background-color: transparent;
+  color: black;
+}
+main #products .product > div > div button:hover span {
   color: black;
 }
 main #products .product > div > div:hover {

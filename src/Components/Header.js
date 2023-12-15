@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import menuIco from "../images/menu.png"
 import arrowIco from "../images/arrow.png"
+import logoImg from "../images/logo.png"
 
 import i18next from 'i18next';
 import en from "../languages/en.json"
@@ -32,7 +33,7 @@ function Header(props) {
     }, [])
 
     return <header>
-        <span id="logo">SnapU</span>
+        <span id="logo"> <img src={logoImg} alt="" /> SnapU</span>
 
         <div id="menu">
             <img src={arrowIco} onClick={() => {
