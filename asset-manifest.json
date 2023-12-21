@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/SnapU/static/css/main.d0d0468b.css",
+    "main.js": "/SnapU/static/js/main.1cef2e13.js",
+    "static/js/787.38f16daf.chunk.js": "/SnapU/static/js/787.38f16daf.chunk.js",
+    "static/media/AboutUsImg1.jfif": "/SnapU/static/media/AboutUsImg1.fde587a4051ba59361c7.jfif",
+    "static/media/AboutUsImg2.jfif": "/SnapU/static/media/AboutUsImg2.8e591e2824c148cd6483.jfif",
+    "index.html": "/SnapU/index.html",
+    "main.d0d0468b.css.map": "/SnapU/static/css/main.d0d0468b.css.map",
+    "main.1cef2e13.js.map": "/SnapU/static/js/main.1cef2e13.js.map",
+    "787.38f16daf.chunk.js.map": "/SnapU/static/js/787.38f16daf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0d0468b.css",
+    "static/js/main.1cef2e13.js"
+  ]
+}
